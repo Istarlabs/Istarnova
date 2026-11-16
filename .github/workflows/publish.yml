@@ -1,0 +1,69 @@
+# Publishes every Istarnova package to nuget.org, all under one version.
+#
+# Started by hand: Actions -> Publish -> Run workflow, or `gh workflow run publish.yml [-f version=1.2.0]`.
+# Without a version, `dotnet.py publish` takes the next one after the highest on nuget.org, or the
+# <Version> in Directory.Build.props when that is higher - which is how a new line (1.2.0, 2.0.0) starts.
+#
+# No API key is stored anywhere. nuget.org trusts this workflow file of this repository through a
+# trusted publishing policy of the istarlabs organisation, and NuGet/login trades the run's OIDC token
+# for a key that is valid for one hour. NUGET_USER is the repository variable naming the nuget.org
+# account that created the policy.
+
+name: Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to publish; empty for the next one"
+        required: false
+
+permissions:
+  contents: read
+  id-token: write
+
+# Two publishes at once would race for the same version.
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Verify, pack and push
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+
+    env:
+      DOTNET_CLI_UI_LANGUAGE: en
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '11.0.x'
+
+      - name: Verify
+        run: python3 Scripts/dotnet.py verify --against origin/master
+
+      - name: Log in to nuget.org
+        id: login
+        uses: NuGet/login@v1.2.0
+        with:
+          user: ${{ vars.NUGET_USER }}
+
+      # dotnet.py publish reads the key from the file [nuget] api_key_file names; on this runner it lives
+      # for the one step that needs it.
+      - name: Pack and push
+        env:
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          mkdir -p ~/.config
+          install -m 600 /dev/null ~/.config/nuget-org-api-key
+          printf '%s' "$NUGET_API_KEY" > ~/.config/nuget-org-api-key
+          python3 Scripts/dotnet.py publish --skip-verify ${VERSION:+--version "$VERSION"}
+          rm -f ~/.config/nuget-org-api-key
