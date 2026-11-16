@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+              xmlns="">
+    <xsd:element name="root" msdata:IsDataSet="true">
+
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="AddNewTitle" xml:space="preserve">
+    <value>Новий запис: {0}</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>Редагувати запис: {0}</value>
+  </data>
+  <data name="AddNewSuccessMessage" xml:space="preserve">
+    <value>Запис успішно додано: {0}</value>
+  </data>
+  <data name="AddNewErrorMessage" xml:space="preserve">
+    <value>Помилка під час додавання запису: {0}</value>
+  </data>
+  <data name="AddNewCancelledMessage" xml:space="preserve">
+    <value>Додавання скасовано</value>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>Ви дійсно хочете видалити цей запис: {0}?</value>
+  </data>
+  <data name="DeleteErrorMessage" xml:space="preserve">
+    <value>Помилка під час видалення запису: {0}</value>
+  </data>
+  <data name="DeleteSuccessMessage" xml:space="preserve">
+    <value>Запис успішно видалено: {0}</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>Видалити запис: {0}</value>
+  </data>
+  <data name="EditCancelledMessage" xml:space="preserve">
+    <value>Оновлення скасовано</value>
+  </data>
+  <data name="EditErrorMessage" xml:space="preserve">
+    <value>Помилка під час оновлення запису: {0}</value>
+  </data>
+  <data name="EditSuccessMessage" xml:space="preserve">
+    <value>Запис успішно оновлено: {0}</value>
+  </data>
+  <data name="ItemNotFoundMessage" xml:space="preserve">
+    <value>Елементів не знайдено</value>
+  </data>
+  <data name="DeleteCancelledMessage" xml:space="preserve">
+    <value>Видалення скасовано</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Ні</value>
+  </data>
+  <data name="ConfirmationTitle" xml:space="preserve">
+    <value>Підтвердження</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+</root>

@@ -1,0 +1,33 @@
+@inherits ErrorBoundaryBase
+
+@if (CurrentException is null)
+{
+    @ChildContent
+}
+else if (ErrorContent is { } errorContent)
+{
+    @errorContent(CurrentException)
+}
+else
+{
+    <div class="error-panel">
+        <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center">
+            <FluentIcon Value="@(new RegularIcons.Size24.ErrorCircle())" Color="Color.Error"/>
+            <FluentText As="TextTag.H4">@ComponentResources.ErrorBoundaryTitle</FluentText>
+        </FluentStack>
+
+        <FluentText>@ComponentResources.ErrorBoundaryMessage</FluentText>
+
+        <code class="error-reference">@ErrorReferenceText</code>
+
+        <FluentStack Orientation="Orientation.Horizontal">
+            <FluentButton Appearance="ButtonAppearance.Primary" OnClick="@RecoverAndRerender">
+                @ComponentResources.TryAgain
+            </FluentButton>
+            <FluentButton Appearance="ButtonAppearance.Default" OnClick="@GoToStartPage">
+                @ComponentResources.GoToStartPage
+            </FluentButton>
+            @Actions?.Invoke(_errorReference)
+        </FluentStack>
+    </div>
+}

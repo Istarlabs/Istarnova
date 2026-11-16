@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+              xmlns="">
+    <xsd:element name="root" msdata:IsDataSet="true">
+
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="LayoutHamburger_Title" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="LayoutHamburger_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="FluentInputBase_Required" xml:space="preserve">
+    <value>Zorunlu</value>
+  </data>
+  <data name="FluentInputBase_RequiredMessage" xml:space="preserve">
+    <value>Bu alan zorunludur</value>
+  </data>
+  <data name="MessageBox_ButtonYes" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="MessageBox_ButtonOk" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="MessageBox_ButtonNo" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="MessageBox_ButtonCancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="MessageBox_Success" xml:space="preserve">
+    <value>Başarılı</value>
+  </data>
+  <data name="MessageBox_Warning" xml:space="preserve">
+    <value>Uyarı</value>
+  </data>
+  <data name="MessageBox_Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="MessageBox_Information" xml:space="preserve">
+    <value>Bilgi</value>
+  </data>
+  <data name="MessageBox_Confirmation" xml:space="preserve">
+    <value>Onay</value>
+  </data>
+  <data name="ColorPickerInput_InvalidHexMessage" xml:space="preserve">
+    <value>Geçersiz onaltılık renk değeri</value>
+  </data>
+  <data name="ColorPickerInput_OpenPickerTitle" xml:space="preserve">
+    <value>Renk seçiciyi aç</value>
+  </data>
+  <data name="Field_ErrorMessage" xml:space="preserve">
+    <value>Bir hata oluştu</value>
+  </data>
+  <data name="Field_SuccessMessage" xml:space="preserve">
+    <value>Geçerli veri</value>
+  </data>
+  <data name="Field_WarningMessage" xml:space="preserve">
+    <value>Lütfen bu değeri kontrol edin</value>
+  </data>
+  <data name="TimeAgo_DayAgo" xml:space="preserve">
+    <value>{0} gün önce</value>
+  </data>
+  <data name="TimeAgo_DaysAgo" xml:space="preserve">
+    <value>{0} gün önce</value>
+  </data>
+  <data name="TimeAgo_HourAgo" xml:space="preserve">
+    <value>{0} saat önce</value>
+  </data>
+  <data name="TimeAgo_HoursAgo" xml:space="preserve">
+    <value>{0} saat önce</value>
+  </data>
+  <data name="TimeAgo_MinuteAgo" xml:space="preserve">
+    <value>{0} dakika önce</value>
+  </data>
+  <data name="TimeAgo_MinutesAgo" xml:space="preserve">
+    <value>{0} dakika önce</value>
+  </data>
+  <data name="TimeAgo_MonthAgo" xml:space="preserve">
+    <value>{0} ay önce</value>
+  </data>
+  <data name="TimeAgo_MonthsAgo" xml:space="preserve">
+    <value>{0} ay önce</value>
+  </data>
+  <data name="TimeAgo_SecondAgo" xml:space="preserve">
+    <value>Az önce</value>
+  </data>
+  <data name="TimeAgo_SecondsAgo" xml:space="preserve">
+    <value>{0} saniye önce</value>
+  </data>
+  <data name="TimeAgo_YearAgo" xml:space="preserve">
+    <value>{0} yıl önce</value>
+  </data>
+  <data name="TimeAgo_YearsAgo" xml:space="preserve">
+    <value>{0} yıl önce</value>
+  </data>
+  <data name="FluentInputFile_LoadingBefore" xml:space="preserve">
+    <value>Yükleniyor...</value>
+  </data>
+  <data name="FluentInputFile_LoadingCompleted" xml:space="preserve">
+    <value>Tamamlandı</value>
+  </data>
+  <data name="FluentInputFile_LoadingCanceled" xml:space="preserve">
+    <value>İptal edildi</value>
+  </data>
+  <data name="FluentInputFile_LoadingInProgress" xml:space="preserve">
+    <value>Yükleniyor {0}/{1} - {2}</value>
+  </data>
+  <data name="TreeItem_LoadingMessage" xml:space="preserve">
+    <value>Yükleniyor...</value>
+  </data>
+  <data name="ErrorBoundary_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="ErrorBoundary_Title" xml:space="preserve">
+    <value>Bir hata oluştu</value>
+  </data>
+  <data name="ErrorBoundary_Message" xml:space="preserve">
+    <value>İşlenmeyen bir hata oluştu. Lütfen BT desteğinizle iletişime geçin.</value>
+  </data>
+  <data name="Paginator_GoFirstPage" xml:space="preserve">
+    <value>İlk sayfaya git</value>
+  </data>
+  <data name="Paginator_GoPreviousPage" xml:space="preserve">
+    <value>Önceki sayfaya git</value>
+  </data>
+  <data name="Paginator_GoNextPage" xml:space="preserve">
+    <value>Sonraki sayfaya git</value>
+  </data>
+  <data name="Paginator_GoLastPage" xml:space="preserve">
+    <value>Son sayfaya git</value>
+  </data>
+  <data name="Paginator_Status" xml:space="preserve">
+    <value>Sayfa {0} / {1}</value>
+  </data>
+  <data name="Paginator_SummaryItem" xml:space="preserve">
+    <value>{0} öğe</value>
+  </data>
+  <data name="Paginator_SummaryItems" xml:space="preserve">
+    <value>{0} öğe</value>
+  </data>
+  <data name="Paginator_SummaryNoItems" xml:space="preserve">
+    <value>Öğe yok</value>
+  </data>
+  <data name="DataGrid_SortMenuAscending" xml:space="preserve">
+    <value>Sırala (artan)</value>
+  </data>
+  <data name="DataGrid_SortMenuDescending" xml:space="preserve">
+    <value>Sırala (azalan)</value>
+  </data>
+  <data name="DataGrid_SortMenu" xml:space="preserve">
+    <value>Sırala</value>
+  </data>
+  <data name="DataGrid_SortAscending" xml:space="preserve">
+    <value>Artan sırala</value>
+  </data>
+  <data name="DataGrid_SortDescending" xml:space="preserve">
+    <value>Azalan sırala</value>
+  </data>
+  <data name="DataGrid_SortMenuAddToSort" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="DataGrid_SortMenuClearSort" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="DataGrid_SortMenuResetAllSorts" xml:space="preserve">
+    <value>Sıfırla</value>
+  </data>
+  <data name="DataGrid_SortMenuClearAllSorts" xml:space="preserve">
+    <value>Tümünü kaldır</value>
+  </data>
+  <data name="DataGrid_SortDirectionAscending" xml:space="preserve">
+    <value>artan</value>
+  </data>
+  <data name="DataGrid_SortDirectionDescending" xml:space="preserve">
+    <value>azalan</value>
+  </data>
+  <data name="DataGrid_SortColumnAscending" xml:space="preserve">
+    <value>{0} artan</value>
+  </data>
+  <data name="DataGrid_SortColumnDescending" xml:space="preserve">
+    <value>{0} azalan</value>
+  </data>
+  <data name="DataGrid_SortLevel" xml:space="preserve">
+    <value>{0} sıralandı, sıralama düzeyi {1} / {2}</value>
+  </data>
+  <data name="DataGrid_SortAnnouncement" xml:space="preserve">
+    <value>{0} ölçütüne göre sıralandı</value>
+  </data>
+  <data name="DataGrid_SortAnnouncementSeparator" xml:space="preserve">
+    <value>, ardından </value>
+  </data>
+  <data name="DataGrid_SortAnnouncementCleared" xml:space="preserve">
+    <value>Sıralama kaldırıldı</value>
+  </data>
+  <data name="DataGrid_ResizeMenu" xml:space="preserve">
+    <value>Yeniden boyutlandır</value>
+  </data>
+  <data name="DataGrid_OptionsMenu" xml:space="preserve">
+    <value>Sütun seçenekleri</value>
+  </data>
+  <data name="DataGrid_ReorderMenu" xml:space="preserve">
+    <value>Sütunları yeniden sırala</value>
+  </data>
+  <data name="DataGrid_ReorderMoveToStart" xml:space="preserve">
+    <value>Başa taşı</value>
+  </data>
+  <data name="DataGrid_ReorderMoveLeft" xml:space="preserve">
+    <value>Sola taşı</value>
+  </data>
+  <data name="DataGrid_ReorderMoveRight" xml:space="preserve">
+    <value>Sağa taşı</value>
+  </data>
+  <data name="DataGrid_ReorderMoveToEnd" xml:space="preserve">
+    <value>Sona taşı</value>
+  </data>
+  <data name="DataGrid_ResizeDiscrete" xml:space="preserve">
+    <value>Sütun genişliği</value>
+  </data>
+  <data name="DataGrid_ResizeExact" xml:space="preserve">
+    <value>Sütun genişliği (piksel)</value>
+  </data>
+  <data name="DataGrid_ResizeGrow" xml:space="preserve">
+    <value>Sütunu genişlet</value>
+  </data>
+  <data name="DataGrid_ResizeShrink" xml:space="preserve">
+    <value>Sütunu daralt</value>
+  </data>
+  <data name="DataGrid_ResizeReset" xml:space="preserve">
+    <value>Sütun genişliklerini sıfırla</value>
+  </data>
+  <data name="DataGrid_ResizeSubmit" xml:space="preserve">
+    <value>Sütun genişliklerini uygula</value>
+  </data>
+  <data name="DataGrid_SelectColumn_AllChecked" xml:space="preserve">
+    <value>Tüm satırlar seçili</value>
+  </data>
+  <data name="DataGrid_SelectColumn_AllUnchecked" xml:space="preserve">
+    <value>Hiçbir satır seçili değil</value>
+  </data>
+  <data name="DataGrid_SelectColumn_AllIndeterminate" xml:space="preserve">
+    <value>Bazı satırlar seçili</value>
+  </data>
+  <data name="DataGrid_SelectColumn_RowChecked" xml:space="preserve">
+    <value>Satır seçili</value>
+  </data>
+  <data name="DataGrid_SelectColumn_RowUnchecked" xml:space="preserve">
+    <value>Satır seçili değil</value>
+  </data>
+  <data name="DataGrid_EmptyContent" xml:space="preserve">
+    <value>Gösterilecek veri yok.</value>
+  </data>
+  <data name="DataGrid_ErrorContent" xml:space="preserve">
+    <value>Veriler alınırken bir hata oluştu.</value>
+  </data>
+  <data name="DataGrid_LoadingContent" xml:space="preserve">
+    <value>Yükleniyor...</value>
+  </data>
+  <data name="DataGrid_ToggleNesting" xml:space="preserve">
+    <value>İç içe geçmeyi aç/kapat</value>
+  </data>
+  <data name="DataGrid_ToggleRowDetails" xml:space="preserve">
+    <value>Satır ayrıntılarını aç/kapat</value>
+  </data>
+  <data name="MessageBar_Dismiss" xml:space="preserve">
+    <value>Bu iletiyi gizle</value>
+  </data>
+  <data name="DatePicker_ButtonTitle" xml:space="preserve">
+    <value>Tarih seçiciyi göster</value>
+  </data>
+  <data name="Calendar_FieldMustBeADate" xml:space="preserve">
+    <value>{0} alanı bir tarih olmalıdır.</value>
+  </data>
+  <data name="Nav_ToggleTitle" xml:space="preserve">
+    <value>Gezintiyi aç/kapat</value>
+  </data>
+  <data name="AppBar_MoreItems" xml:space="preserve">
+    <value>Daha fazla uygulama göster</value>
+  </data>
+  <data name="PresenceStatus_Available" xml:space="preserve">
+    <value>müsait</value>
+  </data>
+  <data name="PresenceStatus_Away" xml:space="preserve">
+    <value>uzakta</value>
+  </data>
+  <data name="PresenceStatus_Busy" xml:space="preserve">
+    <value>meşgul</value>
+  </data>
+  <data name="PresenceStatus_Unknown" xml:space="preserve">
+    <value>bilinmiyor</value>
+  </data>
+  <data name="PresenceStatus_OutOfOffice" xml:space="preserve">
+    <value>ofis dışında</value>
+  </data>
+  <data name="PresenceStatus_Offline" xml:space="preserve">
+    <value>çevrimdışı</value>
+  </data>
+  <data name="PresenceStatus_DoNotDisturb" xml:space="preserve">
+    <value>rahatsız etmeyin</value>
+  </data>
+  <data name="PresenceStatus_Blocked" xml:space="preserve">
+    <value>engellendi</value>
+  </data>
+  <data name="AutoComplete_MaximumSelectedOptionsMessage" xml:space="preserve">
+    <value>Seçilen en fazla {0} öğe sayısına ulaşıldı.</value>
+  </data>
+  <data name="Wizard_LabelButtonPrevious" xml:space="preserve">
+    <value>Geri</value>
+  </data>
+  <data name="Wizard_LabelButtonNext" xml:space="preserve">
+    <value>İleri</value>
+  </data>
+  <data name="Wizard_LabelButtonDone" xml:space="preserve">
+    <value>Bitti</value>
+  </data>
+  <data name="LabelInfo_InfoActionText" xml:space="preserve">
+    <value>Daha fazla bilgi</value>
+  </data>
+  <data name="LabelInfo_InfoText" xml:space="preserve">
+    <value>Daha fazla bilgi</value>
+  </data>
+  <data name="Tabs_MoreItems" xml:space="preserve">
+    <value>{0} sekme daha göster</value>
+  </data>
+</root>

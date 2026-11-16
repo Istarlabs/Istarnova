@@ -1,0 +1,24 @@
+<Project>
+
+  <!--
+    What every Istarnova package shares. One version for all of them: they are released together, so a
+    package's dependency on another is always the version it was built and tested with.
+    A project is a package only when it says so (IsPackable true).
+  -->
+  <PropertyGroup>
+    <Version>1.1.0-preview.3</Version>
+    <IsPackable>false</IsPackable>
+    <Authors>The Istarnova Contributors</Authors>
+    <Copyright>Copyright (c) 2023-2026 The Istarnova Contributors</Copyright>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/Istarlabs/Istarnova</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Istarlabs/Istarnova</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="/" Visible="false" />
+  </ItemGroup>
+
+</Project>

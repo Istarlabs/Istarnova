@@ -1,0 +1,36 @@
+@typeparam TGridItem
+@attribute [CascadingTypeParameter(nameof(TGridItem))]
+
+<FluentStack Orientation="Orientation.Vertical" Style="gap:1rem; width: 100%;">
+    @if (CanSearch)
+    {
+        <FluentTextInput TextInputType="TextInputType.Search" @bind-Value="_searchTerm"
+                         @bind-Value:after="OnSearchChangedAsync"
+                         Placeholder="@Placeholder"
+                         Style="width: 100%; max-width: 28rem;">
+            <StartTemplate>
+                <FluentIcon Value="@(new RegularIcons.Size16.Search())"/>
+            </StartTemplate>
+        </FluentTextInput>
+    }
+
+    @if (_errorMessage.Length > 0)
+    {
+        <FluentMessageBar Intent="MessageBarIntent.Error" Style="width: 100%;">@_errorMessage</FluentMessageBar>
+    }
+
+    <div style="width: 100%;">
+        <LocalizedDataGrid TGridItem="TGridItem"
+                           ItemsProvider="@_provider"
+                           Pagination="@_pagination"
+                           ResizableColumns="@ResizableColumns"
+                           MultiLine="@MultiLine"
+                           GenerateHeader="@GenerateHeader"
+                           ShowPaginator="@ShowPaginator"
+                           EmptyContent="@_emptyContent"
+                           Loading="@_loading"
+                           @attributes="@GridAttributes">
+            @ChildContent
+        </LocalizedDataGrid>
+    </div>
+</FluentStack>

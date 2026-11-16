@@ -1,0 +1,12 @@
+@if (IsRestricted)
+{
+    <AuthorizeView Policy="@Item.Policy" Roles="@Item.CombinedRoles">
+        <Authorized>
+            <NavMenuEntry Item="@Item"/>
+        </Authorized>
+    </AuthorizeView>
+}
+else
+{
+    <NavMenuEntry Item="@Item"/>
+}

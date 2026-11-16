@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bunit" Version="2.12.5" />
+    <PackageReference Include="coverlet.collector" Version="10.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="11.0.0-rc.3.26522.148" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.5.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="11.0.0-rc.3" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="FluentAssertions" Version="8.10.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Using Include="FluentAssertions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Istarnova\Istarnova.csproj" />
+    <ProjectReference Include="..\Istarnova.Export\Istarnova.Export.csproj" />
+    <ProjectReference Include="..\Istarnova.Resources\Istarnova.Resources.csproj" />
+    <ProjectReference Include="..\Istarnova.SourceGenerator.Attributes\Istarnova.SourceGenerator.Attributes.csproj" />
+    <ProjectReference Include="..\Istarnova.SourceGenerator\Istarnova.SourceGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" SetTargetFramework="TargetFramework=netstandard2.0" />
+    <ProjectReference Include="..\Istarnova.EfCore\Istarnova.EfCore.csproj" />
+    <ProjectReference Include="..\Istarnova.Blazor\Istarnova.Blazor.csproj" />
+    <ProjectReference Include="..\Istarnova.Blazor.FluentUI\Istarnova.Blazor.FluentUI.csproj" />
+    <ProjectReference Include="..\Istarnova.AspNetCore\Istarnova.AspNetCore.csproj" />
+  </ItemGroup>
+
+</Project>

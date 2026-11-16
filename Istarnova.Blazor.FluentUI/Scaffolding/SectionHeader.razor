@@ -1,0 +1,16 @@
+<div class="section-header">
+    <div class="section-header__title" role="heading" aria-level="@Level">
+        @if (Icon is { })
+        {
+            <FluentIcon Value="@Icon" Color="@IconColor" Class="section-header__icon"/>
+        }
+        <FluentText Size="@TitleSize" Weight="TextWeight.Semibold">@Title</FluentText>
+    </div>
+
+    @if (Actions is { })
+    {
+        <div class="section-header__actions">
+            @Actions
+        </div>
+    }
+</div>

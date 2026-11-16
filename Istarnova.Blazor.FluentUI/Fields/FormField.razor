@@ -1,0 +1,7 @@
+<div class="@CssClass">
+    @ChildContent
+    @if (!string.IsNullOrWhiteSpace(Hint))
+    {
+        <FluentText As="TextTag.Paragraph" Class="field-hint">@Hint</FluentText>
+    }
+</div>

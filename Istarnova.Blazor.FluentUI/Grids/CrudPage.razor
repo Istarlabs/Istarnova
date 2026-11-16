@@ -1,0 +1,21 @@
+@using Istarnova.Blazor.FluentUI.Scaffolding
+
+<PageScaffold Title="@Title" TitleIcon="@TitleIcon" BackUrl="@BackUrl" Breadcrumbs="@Breadcrumbs">
+    <Actions>
+        @if (Actions is { })
+        {
+            @Actions
+        }
+        else if (OnCreate.HasDelegate)
+        {
+            <FluentButton Appearance="ButtonAppearance.Primary"
+                          IconStart="@(new RegularIcons.Size20.Add())"
+                          OnClick="@OnCreate">
+                @CreateText
+            </FluentButton>
+        }
+    </Actions>
+    <ChildContent>
+        @ChildContent
+    </ChildContent>
+</PageScaffold>

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+    <PackageId>Istarnova.Blazor</PackageId>
+    <Description>Blazor Server building blocks without a component library: observable state, per-circuit user state, shared messages.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Istarnova.EfCore\Istarnova.EfCore.csproj" />
+    <ProjectReference Include="..\Istarnova\Istarnova.csproj" />
+    <!-- The resources ship inside the Istarnova package: not a package dependency of their own. -->
+    <ProjectReference Include="..\Istarnova.Resources\Istarnova.Resources.csproj" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

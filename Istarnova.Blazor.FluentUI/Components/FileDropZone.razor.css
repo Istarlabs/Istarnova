@@ -1,0 +1,31 @@
+.drop-zone {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 120px;
+    padding: 1rem;
+    border: 2px dashed var(--neutral-stroke-rest);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.drop-zone:hover,
+.drop-zone:focus-within {
+    border-color: var(--accent-fill-rest);
+}
+
+.drop-zone--disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.drop-zone ::deep .drop-zone__input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}

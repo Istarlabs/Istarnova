@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+              xmlns="">
+    <xsd:element name="root" msdata:IsDataSet="true">
+
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="NoDataText" xml:space="preserve">
+    <value>Brak danych</value>
+  </data>
+  <data name="LoadingText" xml:space="preserve">
+    <value>Ładowanie danych...</value>
+  </data>
+  <data name="PaginationText" xml:space="preserve">
+    <value>Strona {0} z {1}</value>
+  </data>
+  <data name="SummaryText" xml:space="preserve">
+    <value>Łącznie {0} elementów</value>
+  </data>
+  <data name="BackToOverview" xml:space="preserve">
+    <value>Powrót do przeglądu</value>
+  </data>
+  <data name="ErrorBoundaryTitle" xml:space="preserve">
+    <value>Nie można wyświetlić tej strony</value>
+  </data>
+  <data name="ErrorBoundaryMessage" xml:space="preserve">
+    <value>Coś poszło tu nie tak. Reszta aplikacji nadal działa, więc możesz spróbować ponownie lub wrócić do strony startowej.</value>
+  </data>
+  <data name="ErrorReference" xml:space="preserve">
+    <value>Identyfikator: {0}</value>
+  </data>
+  <data name="TryAgain" xml:space="preserve">
+    <value>Spróbuj ponownie</value>
+  </data>
+  <data name="GoToStartPage" xml:space="preserve">
+    <value>Przejdź do strony startowej</value>
+  </data>
+  <data name="MainNavigation" xml:space="preserve">
+    <value>Nawigacja główna</value>
+  </data>
+</root>

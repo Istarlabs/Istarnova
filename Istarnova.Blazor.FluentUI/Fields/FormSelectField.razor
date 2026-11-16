@@ -1,0 +1,17 @@
+@typeparam TItem where TItem : class
+@inherits FormFieldBase<TItem?>
+
+<FormField Full="Full" Center="Center" Hint="@Hint">
+    <FluentSelect TOption="TItem" TValue="TItem"
+                  Id="@FieldId"
+                  Items="@Items"
+                  OptionText="@OptionText"
+                  OptionValue="@(item => item)"
+                  Value="@Value"
+                  ValueChanged="@ValueChanged"
+                  ValueExpression="@BoundExpression"
+                  Label="@Label"
+                  Required="@Required"
+                  Disabled="@Disabled"
+                  Placeholder="@Placeholder"/>
+</FormField>

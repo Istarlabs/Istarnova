@@ -1,0 +1,14 @@
+@using Microsoft.AspNetCore.Components.Forms
+
+<label class="drop-zone @(IsDisabled ? "drop-zone--disabled" : null)">
+    @if (Icon is { })
+    {
+        <FluentIcon Value="@Icon" />
+    }
+    <span>@Text</span>
+    @if (ShowBusy && _isBusy)
+    {
+        <FluentSpinner />
+    }
+    <InputFile @ref="_input" OnChange="@OnChangeAsync" accept="@Accept" class="drop-zone__input" disabled="@IsDisabled" />
+</label>

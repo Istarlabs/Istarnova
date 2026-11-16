@@ -1,0 +1,19 @@
+@inherits FormFieldBase<string?>
+
+<FormField Full="Full" Center="Center" Hint="@Hint">
+    <FluentTextInput Id="@FieldId"
+                     Value="@Value"
+                     ValueChanged="@ValueChanged"
+                     ValueExpression="@BoundExpression"
+                     Label="@Label"
+                     Required="@Required"
+                     Disabled="@Disabled"
+                     ReadOnly="@ReadOnly"
+                     Autofocus="@Autofocus"
+                     AutoComplete="@AutoComplete"
+                     Placeholder="@Placeholder"
+                     MaxLength="@MaxLength"
+                     TextInputType="@TextInputType"
+                     Immediate="@Immediate"
+                     ImmediateDelay="@ImmediateDelay"/>
+</FormField>

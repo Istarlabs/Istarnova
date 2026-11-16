@@ -1,0 +1,7 @@
+.column-filter-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 220px;
+    padding: 12px;
+}

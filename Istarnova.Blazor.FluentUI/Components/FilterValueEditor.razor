@@ -1,0 +1,20 @@
+@using Istarnova.Filtering
+
+@switch (Kind)
+{
+    case FilterKind.Number:
+        <FluentTextInput Label="@FilterResources.Value" InputMode="TextInputMode.Decimal"
+                         Value="@NumberText"
+                         ValueChanged="@OnNumberChangedAsync" />
+        break;
+    case FilterKind.Date:
+        <FluentDatePicker TValue="DateTime?" Label="@FilterResources.Value"
+                          Value="@Rule.Date?.ToDateTime(TimeOnly.MinValue)"
+                          ValueChanged="@OnDateChangedAsync" />
+        break;
+    default:
+        <FluentTextInput Label="@FilterResources.Value"
+                         Value="@Rule.Text"
+                         ValueChanged="@OnTextChangedAsync" />
+        break;
+}

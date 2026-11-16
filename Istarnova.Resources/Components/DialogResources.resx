@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+              xmlns="">
+    <xsd:element name="root" msdata:IsDataSet="true">
+
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="AddNewTitle" xml:space="preserve">
+    <value>New entry: {0}</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>Edit entry: {0}</value>
+  </data>
+  <data name="AddNewSuccessMessage" xml:space="preserve">
+    <value>Entry added successfully: {0}</value>
+  </data>
+  <data name="AddNewErrorMessage" xml:space="preserve">
+    <value>Error adding entry: {0}</value>
+  </data>
+  <data name="AddNewCancelledMessage" xml:space="preserve">
+    <value>Adding was aborted</value>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>Do you really want to delete this entry: {0}?</value>
+  </data>
+  <data name="DeleteErrorMessage" xml:space="preserve">
+    <value>Error deleting entry: {0}</value>
+  </data>
+  <data name="DeleteSuccessMessage" xml:space="preserve">
+    <value>Entry deleted successfully: {0}</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>Delete entry: {0}</value>
+  </data>
+  <data name="EditCancelledMessage" xml:space="preserve">
+    <value>Updating was aborted</value>
+  </data>
+  <data name="EditErrorMessage" xml:space="preserve">
+    <value>Error updating entry: {0}</value>
+  </data>
+  <data name="EditSuccessMessage" xml:space="preserve">
+    <value>Entry updated successfully: {0}</value>
+  </data>
+  <data name="ItemNotFoundMessage" xml:space="preserve">
+    <value>No items found</value>
+  </data>
+  <data name="DeleteCancelledMessage" xml:space="preserve">
+    <value>Deleting was aborted</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ConfirmationTitle" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+</root>

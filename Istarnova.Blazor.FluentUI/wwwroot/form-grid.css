@@ -1,0 +1,21 @@
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.9rem 1rem;
+    width: 100%;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
+
+.form-field--full {
+    grid-column: 1 / -1;
+}
+
+.form-field--center {
+    justify-content: center;
+}

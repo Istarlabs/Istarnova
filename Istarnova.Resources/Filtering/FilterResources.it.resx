@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+              xmlns="">
+    <xsd:element name="root" msdata:IsDataSet="true">
+
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtro</value>
+  </data>
+  <data name="AddCondition" xml:space="preserve">
+    <value>Aggiungi condizione</value>
+  </data>
+  <data name="RemoveCondition" xml:space="preserve">
+    <value>Rimuovi condizione</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Cancella</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>Corrispondenza</value>
+  </data>
+  <data name="MatchAll" xml:space="preserve">
+    <value>tutte le condizioni</value>
+  </data>
+  <data name="MatchAny" xml:space="preserve">
+    <value>qualsiasi condizione</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>Campo</value>
+  </data>
+  <data name="Operator" xml:space="preserve">
+    <value>Operatore</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valore</value>
+  </data>
+  <data name="Shown" xml:space="preserve">
+    <value>{0} di {1} visualizzati</value>
+    <comment>{0} = items matching the filter, {1} = all items</comment>
+  </data>
+  <data name="NoMatches" xml:space="preserve">
+    <value>Nessun elemento soddisfa queste condizioni.</value>
+  </data>
+  <data name="Contains" xml:space="preserve">
+    <value>contiene</value>
+  </data>
+  <data name="IsEqualTo" xml:space="preserve">
+    <value>è uguale a</value>
+  </data>
+  <data name="IsNotEqualTo" xml:space="preserve">
+    <value>non è uguale a</value>
+  </data>
+  <data name="GreaterThan" xml:space="preserve">
+    <value>è maggiore di</value>
+  </data>
+  <data name="GreaterThanOrEqualTo" xml:space="preserve">
+    <value>è maggiore o uguale a</value>
+  </data>
+  <data name="LessThan" xml:space="preserve">
+    <value>è minore di</value>
+  </data>
+  <data name="LessThanOrEqualTo" xml:space="preserve">
+    <value>è minore o uguale a</value>
+  </data>
+  <data name="IsEmpty" xml:space="preserve">
+    <value>è vuoto</value>
+  </data>
+  <data name="IsNotEmpty" xml:space="preserve">
+    <value>non è vuoto</value>
+  </data>
+  <data name="IsTrue" xml:space="preserve">
+    <value>sì</value>
+  </data>
+  <data name="IsFalse" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="StartsWith" xml:space="preserve">
+    <value>inizia con</value>
+  </data>
+  <data name="EndsWith" xml:space="preserve">
+    <value>termina con</value>
+  </data>
+  <data name="NotContains" xml:space="preserve">
+    <value>non contiene</value>
+  </data>
+  <data name="FilterColumn" xml:space="preserve">
+    <value>Filtra {0}</value>
+    <comment>{0} = the title of the column</comment>
+  </data>
+</root>

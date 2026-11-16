@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+              xmlns="">
+    <xsd:element name="root" msdata:IsDataSet="true">
+
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="AddCondition" xml:space="preserve">
+    <value>Bedingung hinzufügen</value>
+  </data>
+  <data name="RemoveCondition" xml:space="preserve">
+    <value>Bedingung entfernen</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>Treffer, wenn</value>
+  </data>
+  <data name="MatchAll" xml:space="preserve">
+    <value>alle Bedingungen zutreffen</value>
+  </data>
+  <data name="MatchAny" xml:space="preserve">
+    <value>eine Bedingung zutrifft</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>Feld</value>
+  </data>
+  <data name="Operator" xml:space="preserve">
+    <value>Vergleich</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="Shown" xml:space="preserve">
+    <value>{0} von {1} angezeigt</value>
+  </data>
+  <data name="NoMatches" xml:space="preserve">
+    <value>Nichts erfüllt diese Bedingungen.</value>
+  </data>
+  <data name="Contains" xml:space="preserve">
+    <value>enthält</value>
+  </data>
+  <data name="IsEqualTo" xml:space="preserve">
+    <value>ist gleich</value>
+  </data>
+  <data name="IsNotEqualTo" xml:space="preserve">
+    <value>ist ungleich</value>
+  </data>
+  <data name="GreaterThan" xml:space="preserve">
+    <value>ist größer als</value>
+  </data>
+  <data name="GreaterThanOrEqualTo" xml:space="preserve">
+    <value>ist größer oder gleich</value>
+  </data>
+  <data name="LessThan" xml:space="preserve">
+    <value>ist kleiner als</value>
+  </data>
+  <data name="LessThanOrEqualTo" xml:space="preserve">
+    <value>ist kleiner oder gleich</value>
+  </data>
+  <data name="IsEmpty" xml:space="preserve">
+    <value>ist leer</value>
+  </data>
+  <data name="IsNotEmpty" xml:space="preserve">
+    <value>ist nicht leer</value>
+  </data>
+  <data name="IsTrue" xml:space="preserve">
+    <value>ja</value>
+  </data>
+  <data name="IsFalse" xml:space="preserve">
+    <value>nein</value>
+  </data>
+  <data name="StartsWith" xml:space="preserve">
+    <value>beginnt mit</value>
+  </data>
+  <data name="EndsWith" xml:space="preserve">
+    <value>endet mit</value>
+  </data>
+  <data name="NotContains" xml:space="preserve">
+    <value>enthält nicht</value>
+  </data>
+  <data name="FilterColumn" xml:space="preserve">
+    <value>{0} filtern</value>
+    <comment>{0} = the title of the column</comment>
+  </data>
+</root>

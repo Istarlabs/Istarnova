@@ -1,0 +1,50 @@
+.page-scaffold {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.page-scaffold ::deep .page-scaffold__back {
+    align-self: flex-start;
+    margin-left: -0.5rem;
+}
+
+.page-scaffold ::deep .page-scaffold__back,
+.page-scaffold__breadcrumb {
+    margin-bottom: -0.75rem;
+}
+
+.page-scaffold__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-scaffold__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.page-scaffold__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 0 0 auto;
+}
+
+.page-scaffold__title ::deep .page-scaffold__title-icon {
+    flex-shrink: 0;
+}
+
+.page-scaffold__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: auto;
+}

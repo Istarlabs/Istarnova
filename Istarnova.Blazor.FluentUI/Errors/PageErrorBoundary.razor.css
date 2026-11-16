@@ -1,0 +1,14 @@
+.error-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--colorStatusDangerBorder1);
+    border-radius: var(--borderRadiusMedium);
+    background: var(--colorStatusDangerBackground1);
+}
+
+.error-reference {
+    align-self: flex-start;
+    font-family: var(--fontFamilyMonospace);
+}

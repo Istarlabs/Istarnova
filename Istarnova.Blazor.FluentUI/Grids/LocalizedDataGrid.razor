@@ -1,0 +1,30 @@
+@typeparam TGridItem
+@attribute [CascadingTypeParameter(nameof(TGridItem))]
+
+<CascadingValue Value="this" IsFixed="true">
+    <FluentDataGrid TGridItem="TGridItem"
+                    Items="@Items"
+                    ItemsProvider="@ItemsProvider"
+                    Pagination="@(ShowPaginator ? _paginationState : null)"
+                    ResizableColumns="@ResizableColumns"
+                    MultiLine="@MultiLine"
+                    AutoItemsPerPage="@AutoItemsPerPage"
+                    GenerateHeader="@GenerateHeader"
+                    Loading="@Loading"
+                    @attributes="@AdditionalAttributes">
+        <EmptyContent>
+            @_emptyContentFragment
+        </EmptyContent>
+        <LoadingContent>
+            @_loadingContentFragment
+        </LoadingContent>
+        <ChildContent>
+            @ChildContent
+        </ChildContent>
+    </FluentDataGrid>
+</CascadingValue>
+
+@if (ShowPaginator && _paginationState is { })
+{
+    <LocalizedPaginator State="@_paginationState"/>
+}

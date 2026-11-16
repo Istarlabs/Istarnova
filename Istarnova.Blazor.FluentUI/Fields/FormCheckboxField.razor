@@ -1,0 +1,13 @@
+@inherits FormFieldBase<bool>
+
+<FormField Full="Full" Center="Center" Hint="@Hint">
+    <FluentCheckbox Id="@FieldId"
+                    Value="@Value"
+                    ValueChanged="@ValueChanged"
+                    ValueExpression="@BoundExpression"
+                    Label="@Label"
+                    Required="@Required"
+                    Disabled="@Disabled"
+                    ReadOnly="@ReadOnly"
+                    Autofocus="@Autofocus"/>
+</FormField>

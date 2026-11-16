@@ -1,0 +1,271 @@
+#region "Header"
+
+// File: FileExporterSourceGenerator.cs
+// Created 2026/03/06
+// Developer: Pascal Klose
+// SPDX-FileCopyrightText: 2026 The Istarnova Contributors
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+#endregion
+
+#region "Usings"
+
+using System.Collections.Immutable;
+using System.Text;
+using Istarnova.SourceGenerator.Common;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+
+#endregion
+
+namespace Istarnova.SourceGenerator.Data.FileExporter;
+
+/// <summary>
+///     Incremental source generator that generates file export extensions for classes marked with FileExportableAttribute.
+/// </summary>
+[Generator]
+public class FileExporterSourceGenerator : IIncrementalGenerator
+{
+    #region "Constants"
+
+    private const string FileExportableAttributeFullName =
+        "Istarnova.SourceGenerator.Attributes.Data.FileExporter.FileExportableAttribute";
+
+    /// <summary>
+    ///     The type the generated code builds on. It lives in the Istarnova.Export package, while this
+    ///     generator ships with Istarnova itself.
+    /// </summary>
+    private const string ExportColumnFullName = "Istarnova.Data.FileExporter.ExportColumn";
+
+    #endregion
+
+    #region "Fields"
+
+    private static readonly DiagnosticDescriptor MissingExportPackage = new(
+        "ISTAR001",
+        "[FileExportable] needs Istarnova.Export",
+        "'{0}' is marked [FileExportable], but Istarnova.Export is not referenced; add the Istarnova.Export package",
+        "Istarnova.FileExporter",
+        DiagnosticSeverity.Error,
+        isEnabledByDefault: true);
+
+    #endregion
+
+    #region "Methods"
+
+    public void Initialize(IncrementalGeneratorInitializationContext context)
+    {
+        var classDeclarations = context.SyntaxProvider
+            .ForAttributeWithMetadataName(
+                FileExportableAttributeFullName,
+                static (node, _) => node is ClassDeclarationSyntax,
+                static (ctx, _) => GetClassInfo(ctx))
+            .Where(static info => info is { });
+
+        var exportReferenced = context.CompilationProvider
+            .Select(static (compilation, _) => compilation.GetTypeByMetadataName(ExportColumnFullName) is not null);
+
+        context.RegisterSourceOutput(classDeclarations.Combine(exportReferenced), static (spc, pair) =>
+        {
+            var (classInfo, isExportReferenced) = pair;
+
+            if (classInfo is null)
+            {
+                return;
+            }
+
+            if (!isExportReferenced)
+            {
+                spc.ReportDiagnostic(Diagnostic.Create(MissingExportPackage, Location.None, classInfo.Value.ClassName));
+
+                return;
+            }
+
+            var sourceCode = GenerateFileExporterExtensions(classInfo.Value);
+            spc.AddSource($"{classInfo.Value.ClassName}_FileExporter.g.cs", sourceCode);
+        });
+    }
+
+    private static string GenerateFileExporterExtensions(ClassInfo classInfo)
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine(GetDefaultNamespaceAndUsings(classInfo.Namespace));
+
+        var classBody = $$"""
+                          public static partial class {{classInfo.ClassName}}FileExporter
+                          {
+                                {{GetExportColumns(classInfo.Properties)}}
+
+                                {{GetToDataTableMethod(classInfo.Properties, classInfo.ClassName)}}
+                          }
+                          """;
+        sb.AppendLine(classBody);
+
+        return sb.ToString();
+    }
+
+    private static ClassInfo? GetClassInfo(GeneratorAttributeSyntaxContext context)
+    {
+        if (context.TargetSymbol is not INamedTypeSymbol classSymbol)
+        {
+            return null;
+        }
+
+        var properties = classSymbol.GetMembers()
+            .OfType<IPropertySymbol>()
+            .Where(p => p.DeclaredAccessibility == Accessibility.Public && p.GetMethod != null)
+            .Select(p => new PropertyInfo(
+                p.Name,
+                GetColumnName(p),
+                GetUnderlyingType(p.Type),
+                IsNullableType(p.Type)))
+            .ToImmutableArray();
+
+        return new ClassInfo(
+            GeneratedNamespace.Of(classSymbol),
+            classSymbol.Name,
+            properties);
+    }
+
+    private static string GetColumnName(IPropertySymbol property)
+    {
+        // Check for ColumnHeader attribute
+        var columnHeaderAttr = property.GetAttributes()
+            .FirstOrDefault(attr => attr.AttributeClass?.Name == "ColumnHeaderAttribute");
+
+        if (columnHeaderAttr is { ConstructorArguments.Length: > 0 })
+        {
+            return columnHeaderAttr.ConstructorArguments[0].Value?.ToString() ?? property.Name;
+        }
+
+        return property.Name;
+    }
+
+    private static string GetDefaultNamespaceAndUsings(string @namespace)
+        => $"""
+            // <auto-generated />
+            #nullable enable
+            using System;
+            using System.Collections.Generic;
+            using System.Data;
+            using Istarnova.Data.FileExporter;
+
+            {GeneratedNamespace.Declaration(@namespace)}
+            """;
+
+    private static string? GetExportColumns(ImmutableArray<PropertyInfo> properties)
+    {
+        if (properties.Length == 0)
+        {
+            return null;
+        }
+
+        var columns = GenerateExportColumns();
+        if (columns is null)
+        {
+            return null;
+        }
+
+        return $$"""
+                 public static List<ExportColumn> GetExportColumns()
+                 {
+                     return
+                        [
+                            {{columns}}
+                        ];
+                 }
+                 """;
+
+        string? GenerateExportColumns()
+        {
+            var sb = new StringBuilder();
+            foreach (var property in properties)
+            {
+                sb.AppendLine(
+                    $"new ExportColumn(\"{property.ColumnName}\", typeof({property.UnderlyingType})),".PadLeft(4));
+            }
+
+            return sb.Length > 0 ? sb.ToString() : null;
+        }
+    }
+
+    private static string GetToDataTableMethod(ImmutableArray<PropertyInfo> properties, string className)
+    {
+        return $$"""
+                 public static DataTable ToDataTable(IReadOnlyList<{{className}}> data)
+                 {
+                     var table = new DataTable();
+
+                     // Add columns
+                     {{GetColumns()}}
+
+                     // Add rows
+                     foreach (var item in data)
+                     {
+                         table.Rows.Add({{GetRowValues()}});
+                     }
+
+                     return table;
+                 }
+                 """;
+
+        string? GetColumns()
+        {
+            var sb = new StringBuilder();
+            foreach (var property in properties)
+            {
+                sb.AppendLine($"table.Columns.Add(\"{property.ColumnName}\", typeof({property.UnderlyingType}));"
+                    .PadLeft(4));
+            }
+
+            return sb.Length > 0 ? sb.ToString() : null;
+        }
+
+        string? GetRowValues()
+        {
+            var sb = new StringBuilder();
+            for (var i = 0; i < properties.Length; i++)
+            {
+                var property = properties[i];
+                var comma = i < properties.Length - 1 ? "," : "";
+
+                sb.AppendLine((property.IsNullable
+                    ? $"item.{property.Name} ?? default{comma}"
+                    : $"item.{property.Name}{comma}").PadLeft(4));
+            }
+
+            return sb.Length > 0 ? sb.ToString() : null;
+        }
+    }
+
+    private static string GetUnderlyingType(ITypeSymbol type)
+    {
+        if (type.OriginalDefinition.SpecialType != SpecialType.System_Nullable_T)
+        {
+            return type is { CanBeReferencedByName: true, IsValueType: false }
+                ? type.ToDisplayString().TrimEnd('?')
+                : type.ToDisplayString();
+        }
+
+        var nullableType = (INamedTypeSymbol)type;
+
+        return nullableType.TypeArguments[0].ToDisplayString();
+    }
+
+    private static bool IsNullableType(ITypeSymbol type)
+        => type.OriginalDefinition.SpecialType == SpecialType.System_Nullable_T ||
+           type is { CanBeReferencedByName: true, IsValueType: false };
+
+    #endregion
+
+    private readonly record struct ClassInfo(
+        string Namespace,
+        string ClassName,
+        ImmutableArray<PropertyInfo> Properties);
+
+    private readonly record struct PropertyInfo(
+        string Name,
+        string ColumnName,
+        string UnderlyingType,
+        bool IsNullable);
+}

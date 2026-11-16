@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+              xmlns="">
+    <xsd:element name="root" msdata:IsDataSet="true">
+
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+      PublicKeyToken=b77a5c561934e089
+    </value>
+  </resheader>
+  <data name="LayoutHamburger_Title" xml:space="preserve">
+    <value>メニュー</value>
+  </data>
+  <data name="LayoutHamburger_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="FluentInputBase_Required" xml:space="preserve">
+    <value>必須</value>
+  </data>
+  <data name="FluentInputBase_RequiredMessage" xml:space="preserve">
+    <value>この項目は必須です</value>
+  </data>
+  <data name="MessageBox_ButtonYes" xml:space="preserve">
+    <value>はい</value>
+  </data>
+  <data name="MessageBox_ButtonOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MessageBox_ButtonNo" xml:space="preserve">
+    <value>いいえ</value>
+  </data>
+  <data name="MessageBox_ButtonCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="MessageBox_Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="MessageBox_Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="MessageBox_Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="MessageBox_Information" xml:space="preserve">
+    <value>情報</value>
+  </data>
+  <data name="MessageBox_Confirmation" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="ColorPickerInput_InvalidHexMessage" xml:space="preserve">
+    <value>無効な16進数のカラー値です</value>
+  </data>
+  <data name="ColorPickerInput_OpenPickerTitle" xml:space="preserve">
+    <value>カラーピッカーを開く</value>
+  </data>
+  <data name="Field_ErrorMessage" xml:space="preserve">
+    <value>エラーが発生しました</value>
+  </data>
+  <data name="Field_SuccessMessage" xml:space="preserve">
+    <value>有効なデータです</value>
+  </data>
+  <data name="Field_WarningMessage" xml:space="preserve">
+    <value>この値を確認してください</value>
+  </data>
+  <data name="TimeAgo_DayAgo" xml:space="preserve">
+    <value>{0}日前</value>
+  </data>
+  <data name="TimeAgo_DaysAgo" xml:space="preserve">
+    <value>{0}日前</value>
+  </data>
+  <data name="TimeAgo_HourAgo" xml:space="preserve">
+    <value>{0}時間前</value>
+  </data>
+  <data name="TimeAgo_HoursAgo" xml:space="preserve">
+    <value>{0}時間前</value>
+  </data>
+  <data name="TimeAgo_MinuteAgo" xml:space="preserve">
+    <value>{0}分前</value>
+  </data>
+  <data name="TimeAgo_MinutesAgo" xml:space="preserve">
+    <value>{0}分前</value>
+  </data>
+  <data name="TimeAgo_MonthAgo" xml:space="preserve">
+    <value>{0}か月前</value>
+  </data>
+  <data name="TimeAgo_MonthsAgo" xml:space="preserve">
+    <value>{0}か月前</value>
+  </data>
+  <data name="TimeAgo_SecondAgo" xml:space="preserve">
+    <value>たった今</value>
+  </data>
+  <data name="TimeAgo_SecondsAgo" xml:space="preserve">
+    <value>{0}秒前</value>
+  </data>
+  <data name="TimeAgo_YearAgo" xml:space="preserve">
+    <value>{0}年前</value>
+  </data>
+  <data name="TimeAgo_YearsAgo" xml:space="preserve">
+    <value>{0}年前</value>
+  </data>
+  <data name="FluentInputFile_LoadingBefore" xml:space="preserve">
+    <value>読み込み中...</value>
+  </data>
+  <data name="FluentInputFile_LoadingCompleted" xml:space="preserve">
+    <value>完了</value>
+  </data>
+  <data name="FluentInputFile_LoadingCanceled" xml:space="preserve">
+    <value>キャンセルされました</value>
+  </data>
+  <data name="FluentInputFile_LoadingInProgress" xml:space="preserve">
+    <value>読み込み中 {0}/{1} - {2}</value>
+  </data>
+  <data name="TreeItem_LoadingMessage" xml:space="preserve">
+    <value>読み込み中...</value>
+  </data>
+  <data name="ErrorBoundary_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="ErrorBoundary_Title" xml:space="preserve">
+    <value>エラーが発生しました</value>
+  </data>
+  <data name="ErrorBoundary_Message" xml:space="preserve">
+    <value>未処理のエラーが発生しました。IT担当者にお問い合わせください。</value>
+  </data>
+  <data name="Paginator_GoFirstPage" xml:space="preserve">
+    <value>最初のページへ</value>
+  </data>
+  <data name="Paginator_GoPreviousPage" xml:space="preserve">
+    <value>前のページへ</value>
+  </data>
+  <data name="Paginator_GoNextPage" xml:space="preserve">
+    <value>次のページへ</value>
+  </data>
+  <data name="Paginator_GoLastPage" xml:space="preserve">
+    <value>最後のページへ</value>
+  </data>
+  <data name="Paginator_Status" xml:space="preserve">
+    <value>{0} / {1} ページ</value>
+  </data>
+  <data name="Paginator_SummaryItem" xml:space="preserve">
+    <value>{0}件</value>
+  </data>
+  <data name="Paginator_SummaryItems" xml:space="preserve">
+    <value>{0}件</value>
+  </data>
+  <data name="Paginator_SummaryNoItems" xml:space="preserve">
+    <value>項目なし</value>
+  </data>
+  <data name="DataGrid_SortMenuAscending" xml:space="preserve">
+    <value>並べ替え（昇順）</value>
+  </data>
+  <data name="DataGrid_SortMenuDescending" xml:space="preserve">
+    <value>並べ替え（降順）</value>
+  </data>
+  <data name="DataGrid_SortMenu" xml:space="preserve">
+    <value>並べ替え</value>
+  </data>
+  <data name="DataGrid_SortAscending" xml:space="preserve">
+    <value>昇順で並べ替え</value>
+  </data>
+  <data name="DataGrid_SortDescending" xml:space="preserve">
+    <value>降順で並べ替え</value>
+  </data>
+  <data name="DataGrid_SortMenuAddToSort" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="DataGrid_SortMenuClearSort" xml:space="preserve">
+    <value>解除</value>
+  </data>
+  <data name="DataGrid_SortMenuResetAllSorts" xml:space="preserve">
+    <value>リセット</value>
+  </data>
+  <data name="DataGrid_SortMenuClearAllSorts" xml:space="preserve">
+    <value>すべて解除</value>
+  </data>
+  <data name="DataGrid_SortDirectionAscending" xml:space="preserve">
+    <value>昇順</value>
+  </data>
+  <data name="DataGrid_SortDirectionDescending" xml:space="preserve">
+    <value>降順</value>
+  </data>
+  <data name="DataGrid_SortColumnAscending" xml:space="preserve">
+    <value>{0} 昇順</value>
+  </data>
+  <data name="DataGrid_SortColumnDescending" xml:space="preserve">
+    <value>{0} 降順</value>
+  </data>
+  <data name="DataGrid_SortLevel" xml:space="preserve">
+    <value>並べ替え済み {0}、並べ替えレベル {1}/{2}</value>
+  </data>
+  <data name="DataGrid_SortAnnouncement" xml:space="preserve">
+    <value>{0}で並べ替え</value>
+  </data>
+  <data name="DataGrid_SortAnnouncementSeparator" xml:space="preserve">
+    <value>、次に </value>
+  </data>
+  <data name="DataGrid_SortAnnouncementCleared" xml:space="preserve">
+    <value>並べ替えを解除しました</value>
+  </data>
+  <data name="DataGrid_ResizeMenu" xml:space="preserve">
+    <value>サイズ変更</value>
+  </data>
+  <data name="DataGrid_OptionsMenu" xml:space="preserve">
+    <value>列のオプション</value>
+  </data>
+  <data name="DataGrid_ReorderMenu" xml:space="preserve">
+    <value>列の並べ替え</value>
+  </data>
+  <data name="DataGrid_ReorderMoveToStart" xml:space="preserve">
+    <value>先頭へ</value>
+  </data>
+  <data name="DataGrid_ReorderMoveLeft" xml:space="preserve">
+    <value>左へ</value>
+  </data>
+  <data name="DataGrid_ReorderMoveRight" xml:space="preserve">
+    <value>右へ</value>
+  </data>
+  <data name="DataGrid_ReorderMoveToEnd" xml:space="preserve">
+    <value>末尾へ</value>
+  </data>
+  <data name="DataGrid_ResizeDiscrete" xml:space="preserve">
+    <value>列の幅</value>
+  </data>
+  <data name="DataGrid_ResizeExact" xml:space="preserve">
+    <value>列の幅（ピクセル）</value>
+  </data>
+  <data name="DataGrid_ResizeGrow" xml:space="preserve">
+    <value>列幅を広げる</value>
+  </data>
+  <data name="DataGrid_ResizeShrink" xml:space="preserve">
+    <value>列幅を狭める</value>
+  </data>
+  <data name="DataGrid_ResizeReset" xml:space="preserve">
+    <value>列幅をリセット</value>
+  </data>
+  <data name="DataGrid_ResizeSubmit" xml:space="preserve">
+    <value>列幅を設定</value>
+  </data>
+  <data name="DataGrid_SelectColumn_AllChecked" xml:space="preserve">
+    <value>すべての行が選択されています</value>
+  </data>
+  <data name="DataGrid_SelectColumn_AllUnchecked" xml:space="preserve">
+    <value>選択されている行はありません</value>
+  </data>
+  <data name="DataGrid_SelectColumn_AllIndeterminate" xml:space="preserve">
+    <value>一部の行が選択されています</value>
+  </data>
+  <data name="DataGrid_SelectColumn_RowChecked" xml:space="preserve">
+    <value>行を選択済み</value>
+  </data>
+  <data name="DataGrid_SelectColumn_RowUnchecked" xml:space="preserve">
+    <value>行は未選択</value>
+  </data>
+  <data name="DataGrid_EmptyContent" xml:space="preserve">
+    <value>表示するデータがありません。</value>
+  </data>
+  <data name="DataGrid_ErrorContent" xml:space="preserve">
+    <value>データの取得中にエラーが発生しました。</value>
+  </data>
+  <data name="DataGrid_LoadingContent" xml:space="preserve">
+    <value>読み込み中...</value>
+  </data>
+  <data name="DataGrid_ToggleNesting" xml:space="preserve">
+    <value>入れ子の切り替え</value>
+  </data>
+  <data name="DataGrid_ToggleRowDetails" xml:space="preserve">
+    <value>行の詳細の切り替え</value>
+  </data>
+  <data name="MessageBar_Dismiss" xml:space="preserve">
+    <value>このメッセージを非表示にする</value>
+  </data>
+  <data name="DatePicker_ButtonTitle" xml:space="preserve">
+    <value>日付選択を表示</value>
+  </data>
+  <data name="Calendar_FieldMustBeADate" xml:space="preserve">
+    <value>{0} フィールドは日付である必要があります。</value>
+  </data>
+  <data name="Nav_ToggleTitle" xml:space="preserve">
+    <value>ナビゲーションの切り替え</value>
+  </data>
+  <data name="AppBar_MoreItems" xml:space="preserve">
+    <value>その他のアプリを表示</value>
+  </data>
+  <data name="PresenceStatus_Available" xml:space="preserve">
+    <value>対応可能</value>
+  </data>
+  <data name="PresenceStatus_Away" xml:space="preserve">
+    <value>退席中</value>
+  </data>
+  <data name="PresenceStatus_Busy" xml:space="preserve">
+    <value>取り込み中</value>
+  </data>
+  <data name="PresenceStatus_Unknown" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="PresenceStatus_OutOfOffice" xml:space="preserve">
+    <value>外出中</value>
+  </data>
+  <data name="PresenceStatus_Offline" xml:space="preserve">
+    <value>オフライン</value>
+  </data>
+  <data name="PresenceStatus_DoNotDisturb" xml:space="preserve">
+    <value>応答不可</value>
+  </data>
+  <data name="PresenceStatus_Blocked" xml:space="preserve">
+    <value>ブロック済み</value>
+  </data>
+  <data name="AutoComplete_MaximumSelectedOptionsMessage" xml:space="preserve">
+    <value>選択できる項目の上限（{0}件）に達しました。</value>
+  </data>
+  <data name="Wizard_LabelButtonPrevious" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="Wizard_LabelButtonNext" xml:space="preserve">
+    <value>次へ</value>
+  </data>
+  <data name="Wizard_LabelButtonDone" xml:space="preserve">
+    <value>完了</value>
+  </data>
+  <data name="LabelInfo_InfoActionText" xml:space="preserve">
+    <value>詳細を見る</value>
+  </data>
+  <data name="LabelInfo_InfoText" xml:space="preserve">
+    <value>詳細情報</value>
+  </data>
+  <data name="Tabs_MoreItems" xml:space="preserve">
+    <value>さらに {0} 個のタブを表示</value>
+  </data>
+</root>

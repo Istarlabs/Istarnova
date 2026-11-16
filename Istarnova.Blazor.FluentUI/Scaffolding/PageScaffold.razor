@@ -1,0 +1,49 @@
+<div class="page-scaffold">
+    @if (HasBreadcrumbs)
+    {
+        <nav class="page-scaffold__breadcrumb">
+            @foreach (var (crumb, index) in Breadcrumbs!.Select((crumb, index) => (crumb, index)))
+            {
+                @if (index > 0)
+                {
+                    <span aria-hidden="true">/</span>
+                }
+
+                <FluentLink Appearance="LinkAppearance.Subtle" Href="@crumb.Url">@crumb.Text</FluentLink>
+            }
+        </nav>
+    }
+    else if (HasBackLink)
+    {
+        <FluentButton Appearance="ButtonAppearance.Transparent"
+                      IconStart="@(new RegularIcons.Size20.ArrowLeft())"
+                      OnClick="@NavigateBack"
+                      Title="@BackText"
+                      Class="page-scaffold__back">
+            @BackText
+        </FluentButton>
+    }
+
+    @if (HasHeaderRow)
+    {
+        <div class="page-scaffold__header">
+            <div class="page-scaffold__title">
+                @if (TitleIcon is { })
+                {
+                    <FluentIcon Value="@TitleIcon" Class="page-scaffold__title-icon"/>
+                }
+                <FluentText As="TextTag.H1">@Title</FluentText>
+                @TitleSuffix
+            </div>
+
+            @if (Actions is { })
+            {
+                <div class="page-scaffold__actions">
+                    @Actions
+                </div>
+            }
+        </div>
+    }
+
+    @ChildContent
+</div>

@@ -1,0 +1,286 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Istarnova</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Istarnova.Blazor</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Istarnova.Blazor.FluentUI</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup Label="DateResources">
+    <EmbeddedResource Update="Common\DateResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DateResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Common\DateResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Common\DateResources.de.resx">
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\DateResources.es.resx">
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\DateResources.fr.resx">
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\DateResources.it.resx">
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\DateResources.ja-JP.resx">
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\DateResources.pl.resx">
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\DateResources.pt-PT.resx">
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\DateResources.tr.resx">
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\DateResources.uk.resx">
+      <DependentUpon>DateResources.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup Label="ComponentResources">
+    <EmbeddedResource Update="Components\ComponentResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ComponentResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Components\ComponentResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Components\ComponentResources.de.resx">
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\ComponentResources.es.resx">
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\ComponentResources.fr.resx">
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\ComponentResources.it.resx">
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\ComponentResources.ja.resx">
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\ComponentResources.pl.resx">
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\ComponentResources.pt-PT.resx">
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\ComponentResources.tr.resx">
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\ComponentResources.uk.resx">
+      <DependentUpon>ComponentResources.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup Label="DialogResources">
+    <EmbeddedResource Update="Components\DialogResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DialogResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Components\DialogResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Components\DialogResources.de.resx">
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\DialogResources.es.resx">
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\DialogResources.fr.resx">
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\DialogResources.it.resx">
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\DialogResources.ja.resx">
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\DialogResources.pl.resx">
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\DialogResources.pt-PT.resx">
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\DialogResources.tr.resx">
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Components\DialogResources.uk.resx">
+      <DependentUpon>DialogResources.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup Label="BlazorResources">
+    <EmbeddedResource Update="Errors\BlazorResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BlazorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Errors\BlazorResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Errors\BlazorResources.de.resx">
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Errors\BlazorResources.es.resx">
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Errors\BlazorResources.fr.resx">
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Errors\BlazorResources.it.resx">
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Errors\BlazorResources.ja.resx">
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Errors\BlazorResources.pl.resx">
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Errors\BlazorResources.pt-PT.resx">
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Errors\BlazorResources.tr.resx">
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Errors\BlazorResources.uk.resx">
+      <DependentUpon>BlazorResources.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup Label="FilterResources">
+    <EmbeddedResource Update="Filtering\FilterResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FilterResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Filtering\FilterResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Filtering\FilterResources.de.resx">
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filtering\FilterResources.es.resx">
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filtering\FilterResources.fr.resx">
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filtering\FilterResources.it.resx">
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filtering\FilterResources.ja.resx">
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filtering\FilterResources.pl.resx">
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filtering\FilterResources.pt-PT.resx">
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filtering\FilterResources.tr.resx">
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Filtering\FilterResources.uk.resx">
+      <DependentUpon>FilterResources.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup Label="FluentLibraryResources">
+    <EmbeddedResource Update="Localization\FluentLibraryResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FluentLibraryResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Localization\FluentLibraryResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Localization\FluentLibraryResources.de.resx">
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\FluentLibraryResources.es.resx">
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\FluentLibraryResources.fr.resx">
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\FluentLibraryResources.it.resx">
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\FluentLibraryResources.ja.resx">
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\FluentLibraryResources.pl.resx">
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\FluentLibraryResources.pt-PT.resx">
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\FluentLibraryResources.tr.resx">
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\FluentLibraryResources.uk.resx">
+      <DependentUpon>FluentLibraryResources.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup Label="ClaimsResources">
+    <EmbeddedResource Update="Security\ClaimsResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClaimsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Security\ClaimsResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Security\ClaimsResources.de.resx">
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Security\ClaimsResources.es.resx">
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Security\ClaimsResources.fr.resx">
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Security\ClaimsResources.it.resx">
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Security\ClaimsResources.ja-JP.resx">
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Security\ClaimsResources.pl.resx">
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Security\ClaimsResources.pt-PT.resx">
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Security\ClaimsResources.tr.resx">
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Security\ClaimsResources.uk.resx">
+      <DependentUpon>ClaimsResources.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

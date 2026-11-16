@@ -1,0 +1,27 @@
+@using Istarnova.Filtering
+@typeparam TItem
+
+<FluentButton Id="@_anchorId"
+              Appearance="@(IsActive ? ButtonAppearance.Primary : ButtonAppearance.Subtle)"
+              IconStart="@(new RegularIcons.Size20.Filter())"
+              IconOnly="true"
+              Title="@ButtonTitle"
+              OnClick="@ToggleAsync" />
+<FluentPopover AnchorId="@_anchorId" @bind-Opened="_open">
+    @if (_open && Rule is { } rule)
+    {
+        <div class="column-filter-panel">
+            <FluentSelect TOption="FilterOperator" TValue="string" Label="@FilterResources.Operator"
+                          Items="@FilterOperators.For(Property.Kind)"
+                          OptionText="@(entry => entry.GetDisplayName())"
+                          OptionValue="@(entry => entry.ToString())"
+                          Value="@rule.Operator.ToString()"
+                          ValueChanged="@OnOperatorChangedAsync" />
+            @if (FilterOperators.NeedsValue(rule.Operator))
+            {
+                <FilterValueEditor Rule="@rule" Kind="@Property.Kind" OnChanged="@OnChanged" />
+            }
+            <FluentButton Appearance="ButtonAppearance.Subtle" OnClick="@ClearAsync">@FilterResources.Clear</FluentButton>
+        </div>
+    }
+</FluentPopover>

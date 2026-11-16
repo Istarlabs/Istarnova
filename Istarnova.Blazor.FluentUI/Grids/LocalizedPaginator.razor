@@ -1,0 +1,8 @@
+<FluentPaginator State="@State" Disabled="@Disabled">
+    <PaginationTextTemplate>
+        @string.Format(CultureInfo.CurrentCulture, ComponentResources.PaginationText, State.CurrentPageIndex + 1, (State.LastPageIndex ?? 0) + 1)
+    </PaginationTextTemplate>
+    <SummaryTemplate>
+        @string.Format(CultureInfo.CurrentCulture, ComponentResources.SummaryText, State.TotalItemCount ?? 0)
+    </SummaryTemplate>
+</FluentPaginator>

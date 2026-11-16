@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+    <PackageId>Istarnova.Export</PackageId>
+    <Description>Excel and CSV export for Istarnova: FileExporter over ClosedXML and CsvHelper, formula-safe CSV, and the target of the [FileExportable] source generator.</Description>
+    <PackageTags>excel;csv;export;closedxml;csvhelper</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.1" />
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
+    <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-beta21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Istarnova\Istarnova.csproj" />
+  </ItemGroup>
+
+</Project>

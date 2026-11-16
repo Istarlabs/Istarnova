@@ -1,0 +1,71 @@
+# Build and test every pull request and every push to master.
+#
+# Everything Istarnova needs comes from NuGet, so a hosted runner can restore it on its own.
+#
+# The workflow runs `Scripts/dotnet.py verify` rather than its own dotnet lines, so the pipeline does
+# exactly what a local run does - one place to change, and no drift between "green here" and "green on
+# my machine".
+#
+# Those scripts are shims into devscripts, which the .devscripts submodule pins; the checkout brings it
+# along, and the shims find it there.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [ master ]
+
+# A second push to the same branch makes the first run's answer worthless - it is about code nobody
+# will merge. Cancelling it frees the runner and stops a stale result arriving after the real one.
+# Never on master: those runs are the record of what landed, and each commit there deserves its own.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
+jobs:
+  verify:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # verify diffs against the base branch, which needs more than a shallow clone.
+          fetch-depth: 0
+          submodules: true
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '11.0.x'
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: ${{ runner.os }}-nuget-
+
+      - name: Licence lines
+        run: python3 Scripts/spdx.py check
+
+      - name: Restore
+        run: dotnet restore
+
+      # CS9057 is fatal, and it is `verify` that makes it so, through dotnet.fatal_warnings in
+      # Scripts/project.toml. It used to be a `dotnet build` step of its own ahead of this one,
+      # which built everything a second time for a guard that costs nothing folded into the build
+      # that was happening anyway.
+      #
+      # What it guards: the source generators are built against Microsoft.CodeAnalysis.CSharp, and
+      # if that is ever newer than the Roslyn the runner's SDK carries, the compiler raises CS9057
+      # and silently stops running every one of them. The build still succeeds and the generated
+      # code is simply gone. A green build that ships nothing is worse than a red one.
+      - name: Verify
+        env:
+          DOTNET_CLI_UI_LANGUAGE: en
+        run: python3 Scripts/dotnet.py verify --against origin/${{ github.base_ref || 'master' }}
+
+      - name: Vulnerable packages
+        env:
+          DOTNET_CLI_UI_LANGUAGE: en
+        run: python3 Scripts/dotnet.py packages --vulnerable

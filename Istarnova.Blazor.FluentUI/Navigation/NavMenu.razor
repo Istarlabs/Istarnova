@@ -1,0 +1,12 @@
+@implements IDisposable
+
+<CascadingValue Value="_state" IsFixed="true">
+    <FluentNav Width="@Width"
+               aria-label="@(AriaLabel ?? ComponentResources.MainNavigation)"
+               Style="border-right: 1px solid var(--colorNeutralStroke2);">
+        @foreach (var item in _items)
+        {
+            <NavMenuNode Item="@item"/>
+        }
+    </FluentNav>
+</CascadingValue>

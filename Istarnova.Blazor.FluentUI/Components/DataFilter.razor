@@ -1,0 +1,70 @@
+@using Istarnova.Filtering
+@typeparam TItem
+
+<div class="data-filter">
+    <div class="data-filter-bar">
+        <FluentButton Appearance="@(FilterSet.Rules.Count > 0 ? ButtonAppearance.Primary : ButtonAppearance.Outline)"
+                      IconStart="@(new RegularIcons.Size20.Filter())"
+                      OnClick="@Toggle">@FilterResources.Filter</FluentButton>
+        @if (FilterSet.Rules.Count > 0)
+        {
+            <span>@ShownText</span>
+        }
+    </div>
+
+    @if (_open)
+    {
+        <div class="data-filter-panel">
+            @foreach (var rule in FilterSet.Rules)
+            {
+                var property = PropertyOf(rule);
+
+                <div class="data-filter-row" @key="rule">
+                    <FluentSelect TOption="FilterProperty<TItem>" TValue="string" Label="@FilterResources.Property"
+                                  Items="@Properties"
+                                  OptionText="@(entry => entry.Title)"
+                                  OptionValue="@(entry => entry.Name)"
+                                  Value="@rule.Property"
+                                  ValueChanged="@(name => OnPropertyChangedAsync(rule, name))" />
+                    <FluentSelect TOption="FilterOperator" TValue="string" Label="@FilterResources.Operator"
+                                  Items="@FilterOperators.For(property.Kind)"
+                                  OptionText="@(entry => entry.GetDisplayName())"
+                                  OptionValue="@(entry => entry.ToString())"
+                                  Value="@rule.Operator.ToString()"
+                                  ValueChanged="@(name => OnOperatorChangedAsync(rule, name))" />
+                    @if (FilterOperators.NeedsValue(rule.Operator))
+                    {
+                        <FilterValueEditor Rule="@rule" Kind="@property.Kind" OnChanged="@OnChanged" />
+                    }
+                    <FluentButton Appearance="ButtonAppearance.Subtle" Title="@FilterResources.RemoveCondition"
+                                  IconStart="@(new RegularIcons.Size20.Dismiss())"
+                                  OnClick="@(() => RemoveAsync(rule))" />
+                </div>
+            }
+
+            <div class="data-filter-footer">
+                <FluentButton Appearance="ButtonAppearance.Outline"
+                              IconStart="@(new RegularIcons.Size20.Add())"
+                              OnClick="@AddAsync">@FilterResources.AddCondition</FluentButton>
+                @if (FilterSet.Rules.Count > 1)
+                {
+                    <FluentSelect TOption="string" TValue="string" Label="@FilterResources.Match"
+                                  Items="@MatchModes"
+                                  OptionText="@MatchModeText"
+                                  OptionValue="@(mode => mode)"
+                                  Value="@(FilterSet.MatchAny ? AnyMode : AllMode)"
+                                  ValueChanged="@OnMatchModeChangedAsync" />
+                }
+                @if (FilterSet.Rules.Count > 0)
+                {
+                    <FluentButton Appearance="ButtonAppearance.Subtle" OnClick="@ClearAsync">@FilterResources.Clear</FluentButton>
+                }
+            </div>
+
+            @if (FilterSet.Rules.Count > 0 && ShownCount == 0)
+            {
+                <FluentMessageBar Intent="MessageBarIntent.Info" AllowDismiss="false">@FilterResources.NoMatches</FluentMessageBar>
+            }
+        </div>
+    }
+</div>

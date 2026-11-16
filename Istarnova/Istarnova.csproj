@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>true</IsPackable>
+    <PackageId>Istarnova</PackageId>
+    <Description>A .NET utility library: extensions and helpers, incremental source generators ([AutoEquatable], [EnumExtras], [FileExportable], [GenerateApiController]), Base45, natural sorting, byte units, Font Awesome constants, and resources in English, German and Japanese.</Description>
+    <PackageTags>extensions;source-generators;helpers;base45;localization;fontawesome</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-beta21" />
+  </ItemGroup>
+
+  <!--
+    This package carries its helpers with it. Resources and attributes go into lib/ next to Istarnova.dll,
+    the generator into analyzers/dotnet/cs, where the compiler picks it up. PrivateAssets keeps the
+    project references from turning into package dependencies nobody publishes.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Istarnova.Resources\Istarnova.Resources.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Istarnova.SourceGenerator.Attributes\Istarnova.SourceGenerator.Attributes.csproj"
+                      PrivateAssets="all" />
+    <ProjectReference Include="..\Istarnova.SourceGenerator\Istarnova.SourceGenerator.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false"
+                      SetTargetFramework="TargetFramework=netstandard2.0"
+                      PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Istarnova.SourceGenerator\bin\$(Configuration)\netstandard2.0\Istarnova.SourceGenerator.dll"
+          Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);IncludeProjectReferencesInPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+
+  <!--
+    The output of the bundled projects, satellites included. A satellite keeps its culture folder
+    (DestinationSubDirectory, e.g. "de/"): without it every translation lands in lib/ under the same
+    name, NuGet keeps one of them, and the language a reader asked for is gone.
+  -->
+  <Target Name="IncludeProjectReferencesInPackage" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <_BundledReferenceOutput Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+      <BuildOutputInPackage Include="@(_BundledReferenceOutput)"
+                            TargetPath="%(_BundledReferenceOutput.DestinationSubDirectory)%(Filename)%(Extension)" />
+    </ItemGroup>
+  </Target>
+
+</Project>

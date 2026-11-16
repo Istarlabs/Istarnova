@@ -1,0 +1,26 @@
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.section-header__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.section-header__title ::deep .section-header__icon {
+    flex-shrink: 0;
+}
+
+.section-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+    margin-left: auto;
+}

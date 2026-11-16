@@ -1,0 +1,41 @@
+@using Istarnova.Resources
+
+<FluentDialogBody FixedHeaderFooter="true">
+    <TitleTemplate>
+        <DialogTitle Icon="@Icon" Title="@ResolvedTitle"/>
+    </TitleTemplate>
+
+    <ChildContent>
+        @if (_editContext is { })
+        {
+            <EditForm EditContext="_editContext">
+                <DataAnnotationsValidator/>
+                <div class="form-grid">
+                    @ChildContent
+                </div>
+                @if (ShowValidationSummary)
+                {
+                    <FluentValidationSummary/>
+                }
+                @if (!string.IsNullOrWhiteSpace(ErrorMessage))
+                {
+                    <FluentMessageBar Intent="MessageBarIntent.Error" AllowDismiss="false">@ErrorMessage</FluentMessageBar>
+                }
+            </EditForm>
+        }
+    </ChildContent>
+
+    <ActionTemplate>
+        <FluentButton Appearance="ButtonAppearance.Primary"
+                      OnClick="@SaveAsync"
+                      Loading="@_isSaving"
+                      Disabled="@(_isSaving || !CanSave)">
+            @(Dialog.Options.Footer.PrimaryAction.Label ?? DialogResources.Save)
+        </FluentButton>
+        <FluentButton Appearance="ButtonAppearance.Default"
+                      OnClick="@CancelAsync"
+                      Disabled="@_isSaving">
+            @(Dialog.Options.Footer.SecondaryAction.Label ?? DialogResources.Cancel)
+        </FluentButton>
+    </ActionTemplate>
+</FluentDialogBody>

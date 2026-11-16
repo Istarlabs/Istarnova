@@ -1,0 +1,35 @@
+.data-filter {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.data-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.data-filter-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 12px;
+    border: 1px solid var(--colorNeutralStroke2);
+    border-radius: var(--borderRadiusMedium);
+}
+
+.data-filter-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) auto;
+    align-items: end;
+    gap: 12px;
+}
+
+.data-filter-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 12px;
+}

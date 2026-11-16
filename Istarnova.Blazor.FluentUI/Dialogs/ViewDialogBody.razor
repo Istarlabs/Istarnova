@@ -1,0 +1,25 @@
+@using Istarnova.Resources
+
+<FluentDialogBody FixedHeaderFooter="true">
+    <TitleTemplate>
+        @if (TitleContent is { })
+        {
+            @TitleContent
+        }
+        else
+        {
+            <DialogTitle Icon="@Icon" Title="@ResolvedTitle"/>
+        }
+    </TitleTemplate>
+
+    <ChildContent>
+        @ChildContent
+    </ChildContent>
+
+    <ActionTemplate>
+        @Actions
+        <FluentButton Appearance="ButtonAppearance.Default" OnClick="@CloseAsync">
+            @(Dialog.Options.Footer.SecondaryAction.Label ?? DialogResources.Close)
+        </FluentButton>
+    </ActionTemplate>
+</FluentDialogBody>

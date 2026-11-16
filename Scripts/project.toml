@@ -1,0 +1,27 @@
+# What this project differs by. The scripts themselves live in devscripts (https://github.com/Istarlabs/devscripts);
+# Scripts/*.py here are shims. They use DEVSCRIPTS, else ~/dev/tools/devscripts, else the .devscripts submodule
+# (`git submodule update --init` after cloning).
+name = "Istarnova"
+env_prefix = "ISTARNOVA"
+
+[dotnet]
+solution = "Istarnova.sln"
+test_project = "Istarnova.Tests/Istarnova.Tests.csproj"
+
+# CS9057: the source generators are built against Microsoft.CodeAnalysis.CSharp. If that exceeds the
+# SDK's Roslyn, every one of them silently stops running and the build still succeeds with the
+# generated code gone. Fatal, inside verify's build rather than a second one.
+fatal_warnings = ["CS9057"]
+
+# `dotnet.py publish` pushes every package to nuget.org.
+[nuget]
+feed = "https://api.nuget.org/v3/index.json"
+api_key_file = "~/.config/nuget-org-api-key"
+
+[spdx]
+holder = "The Istarnova Contributors"
+licence = "GPL-3.0-or-later"
+
+[repo]
+main_branch = "master"
+ci = true

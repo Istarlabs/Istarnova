@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+    <PackageId>Istarnova.Blazor.FluentUI</PackageId>
+    <Description>FluentUI Blazor 5 building blocks shared by the applications: localized grids, page scaffold, dialogs, navigation.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <InternalsVisibleTo Include="Istarnova.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="5.0.1" />
+    <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Istarnova.Blazor\Istarnova.Blazor.csproj" />
+    <ProjectReference Include="..\Istarnova.EfCore\Istarnova.EfCore.csproj" />
+    <!-- The resources ship inside the Istarnova package: not a package dependency of their own. -->
+    <ProjectReference Include="..\Istarnova.Resources\Istarnova.Resources.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Istarnova\Istarnova.csproj" />
+  </ItemGroup>
+
+</Project>

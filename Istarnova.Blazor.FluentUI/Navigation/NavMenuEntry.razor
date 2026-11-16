@@ -1,0 +1,21 @@
+@if (Item.HasSubItems)
+{
+    <FluentNavCategory @key="@State.FoldKey(Item)"
+                       Title="@Item.Title"
+                       IconRest="@Item.Icon"
+                       Expanded="@State.IsExpanded(Item)"
+                       ExpandedChanged="@(expanded => State.SetExpanded(Item, expanded))">
+        @foreach (var subItem in Item.SubItems)
+        {
+            <NavMenuNode Item="@subItem"/>
+        }
+    </FluentNavCategory>
+}
+else
+{
+    <FluentNavItem Href="@Item.UrlWithQueryParameters"
+                   Match="@Item.Match"
+                   IconRest="@Item.Icon">
+        @Item.Title
+    </FluentNavItem>
+}
