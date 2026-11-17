@@ -38,15 +38,16 @@ python3 Scripts/dotnet.py test --filter "FullyQualifiedName~StringExtensionsTest
 # Pack every package into nupkg/ and list them, showing the version the next publish would get
 python3 Scripts/dotnet.py publish --dry-run
 
-# Pack and push them to nuget.org, the feed in [nuget] (Scripts/project.toml)
-python3 Scripts/dotnet.py publish
+# Pack and push them to nuget.org, the feed in [nuget] (Scripts/project.toml) - normally not from here but
+# through the Publish workflow, which logs in by trusted publishing and needs no API key
+gh workflow run publish.yml [-f version=1.2.0]
 ```
 
 Every publish picks its own version: the highest one on the feed with its last number raised by one
 (1.1.0-preview.2 -> 1.1.0-preview.3, 1.1.0 -> 1.1.1). To start a new line - 1.2.0, 2.0.0, or the
 release that ends a preview line - set `<Version>` in `Directory.Build.props` above what is
-published; that version wins. After a push the script writes the published version into the
-`.csproj`, and that change is committed.
+published; that version wins (or pass `-f version=...` to the workflow). The workflow does not commit
+the published version back: nuget.org is the record of what is out there.
 
 The `Istarnova` package bundles Istarnova.Resources (every satellite in its culture folder), the attributes and the
 source generator - see the comments in `Istarnova/Istarnova.csproj`. The building blocks reference Istarnova.Resources
